@@ -88,11 +88,11 @@ id_ed25519_inventurs
 
 ### Client GitHub
 ```bash
-ssh-keygen -t ed25519 -C "benchlab-github"
+ssh-keygen -t ed25519 -C "client-github"
 ```
 Save as:
 ```
-id_ed25519_benchlab
+id_ed25519_client
 ```
 
 You will now have:
@@ -102,8 +102,8 @@ id_ed25519_personal
 id_ed25519_personal.pub
 id_ed25519_inventurs
 id_ed25519_inventurs.pub
-id_ed25519_benchlab
-id_ed25519_benchlab.pub
+id_ed25519_client
+id_ed25519_client.pub
 ```
 
 ---
@@ -162,10 +162,10 @@ Host inventurs-github
   IdentityFile ~/.ssh/id_ed25519_inventurs
 
 # Client GitHub
-Host benchlab-github
+Host client-github
   HostName github.com
   User git
-  IdentityFile ~/.ssh/id_ed25519_benchlab
+  IdentityFile ~/.ssh/id_ed25519_client
 ```
 
 Save and exit.
@@ -177,7 +177,7 @@ Save and exit.
 ```bash
 ssh -T git@github-personal
 ssh -T git@inventurs-github
-ssh -T git@benchlab-github
+ssh -T git@client-github
 ```
 
 Expected output:
@@ -211,7 +211,7 @@ git clone git@inventurs-github:ORG/repo.git
 
 ### Client
 ```bash
-git clone git@benchlab-github:ORG/repo.git
+git clone git@client-github:ORG/repo.git
 ```
 
 ---
